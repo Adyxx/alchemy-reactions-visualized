@@ -14,34 +14,55 @@ class Element(models.Model):
     symbol = models.CharField(max_length=24, unique=True)
     description = models.TextField(blank=True)
     cost = models.PositiveIntegerField(default=0)
-    aspect = models.CharField(max_length=24, choices=Aspect.choices, default=Aspect.SPARK)
-    components = models.ManyToManyField(
-        "self",
-        through="ElementComponent",
-        through_fields=("parent", "component"),
-        symmetrical=False,
-        related_name="composed_elements",
-        blank=True,
+    aspect = models.CharField(
+        max_length=24,
+        choices=Aspect.choices,
+        default=Aspect.SPARK,
     )
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["name"]
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.name
 
 
-class ElementComponent(models.Model):
-    parent = models.ForeignKey(Element, on_delete=models.CASCADE, related_name="component_links")
-    component = models.ForeignKey(Element, on_delete=models.CASCADE, related_name="used_in_links")
+class Recipe(models.Model):
+    result = models.ForeignKey(
+        Element,
+        on_delete=models.CASCADE,
+        related_name="recipes",
+    )
 
     class Meta:
-        ordering = ["parent__name", "component__name"]
+        ordering = ["result__name", "id"]
+
+    def __str__(self):
+        return f"Recipe for {self.result}"
+
+class RecipeComponent(models.Model):
+    recipe = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE,
+        related_name="components",
+    )
+
+    element = models.ForeignKey(
+        Element,
+        on_delete=models.CASCADE,
+        related_name="used_in_recipes",
+    )
+
+    class Meta:
         constraints = [
-            models.UniqueConstraint(fields=["parent", "component"], name="unique_element_component_pair"),
+            models.UniqueConstraint(
+                fields=["recipe", "element"],
+                name="unique_component_in_recipe",
+            )
         ]
 
-    def __str__(self) -> str:
-        return f"{self.component} -> {self.parent}"
+    def __str__(self):
+        return f"{self.element} in {self.recipe}"

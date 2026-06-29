@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.http import JsonResponse
 from django.urls import path
 
-from elements.models import Element
+from elements.models import Element, Recipe
 
 
 def health(request):
@@ -12,7 +12,8 @@ def health(request):
 
 
 def elements_graph(request):
-    elements = Element.objects.prefetch_related("components").order_by("name")
+    elements = Element.objects.all().order_by("name")
+
     nodes = [
         {
             "id": str(element.pk),
@@ -24,16 +25,27 @@ def elements_graph(request):
         }
         for element in elements
     ]
+
     edges = []
-    for element in elements:
-        for component in element.components.all():
+
+    recipes = (
+        Recipe.objects
+        .prefetch_related("components__element")
+        .select_related("result")
+    )
+
+    for recipe in recipes:
+        result_id = str(recipe.result_id)
+
+        for component in recipe.components.all():
             edges.append(
                 {
-                    "id": f"{component.pk}-{element.pk}",
-                    "source": str(component.pk),
-                    "target": str(element.pk),
+                    "id": f"{component.element_id}-{recipe.id}-{recipe.result_id}",
+                    "source": str(component.element_id),
+                    "target": result_id,
                 }
             )
+
     return JsonResponse({"nodes": nodes, "edges": edges})
 
 
