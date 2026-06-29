@@ -147,6 +147,11 @@ select {
   text-align: right;
 }
 
+.workspace-note span {
+  font-family: 'IBM Plex Mono', monospace;
+  color: #fbbf24;
+}
+
 .flow-frame {
   flex: 1;
   min-height: 560px;
@@ -165,12 +170,71 @@ select {
   border-width: 1px;
   border-style: solid;
   border-radius: 18px;
-  padding: 14px 16px;
+  padding: 0;
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.38);
 }
 
 .react-flow__node-default {
   background: #1e293b;
+}
+
+.element-node {
+  display: flex;
+  min-width: 220px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.element-node__symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  padding: 16px 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-right: 1px solid rgba(15, 23, 42, 0.14);
+}
+
+.element-node__body {
+  display: grid;
+  gap: 4px;
+  padding: 14px 14px 14px 16px;
+}
+
+.element-node__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.element-node__meta,
+.element-node__desc,
+.element-node__components {
+  font-size: 0.86rem;
+  line-height: 1.25;
+}
+
+.element-node__meta {
+  opacity: 0.86;
+}
+
+.element-node__desc {
+  opacity: 0.78;
+}
+
+.element-node__components {
+  opacity: 0.72;
+}
+
+.graph-state {
+  display: grid;
+  place-items: center;
+  min-height: 560px;
+  color: rgba(226, 232, 240, 0.8);
+}
+
+.graph-state--error {
+  color: #fecaca;
 }
 
 .react-flow__edge-textbg {
