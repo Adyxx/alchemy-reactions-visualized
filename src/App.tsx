@@ -9,6 +9,9 @@ import {
   Position,
   ReactFlow,
   ReactFlowProvider,
+  useNodesState,
+  useEdgesState,
+
 } from '@xyflow/react';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -44,8 +47,10 @@ const aspectTheme: Record<
 };
 
 function App() {
-  const [nodes, setNodes] = useState<Node[]>([]);
-  const [edges, setEdges] = useState<Edge[]>([]);
+
+  const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -102,7 +107,6 @@ function App() {
           const depth = depthOf(node.id);
           const rowIndex = groupedNodes.get(depth)?.findIndex((item) => item.id === node.id) ?? 0;
           const theme = aspectTheme[node.aspect];
-          const components = componentMap.get(node.id) ?? [];
 
           return {
             id: node.id,
@@ -120,12 +124,6 @@ function App() {
                     </div>
                     <div className="element-node__desc">
                       {node.description || 'No description yet'}
-                    </div>
-                    
-                    <div className="element-node__components">
-                      {components.length > 0
-                        ? `Made of ${components.length} element(s)`
-                        : 'No components'}
                     </div>
                   </div>
                 </div>
@@ -150,7 +148,6 @@ function App() {
           target: edge.target,
           markerEnd: { type: MarkerType.ArrowClosed },
           style: { stroke: '#64748b', strokeWidth: 2.5 },
-          label: 'made of',
         }));
 
         setNodes(layoutNodes);
@@ -233,7 +230,7 @@ function App() {
             ) : error ? (
               <div className="graph-state graph-state--error">{error}</div>
             ) : (
-              <ReactFlow nodes={nodes} edges={edges} fitView proOptions={{ hideAttribution: true }}>
+              <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} onEdgesChange={onEdgesChange} fitView proOptions={{ hideAttribution: true }}>
                 <Background variant={BackgroundVariant.Dots} gap={22} size={1} color="#d4d4d8" />
                 <MiniMap
                   zoomable
