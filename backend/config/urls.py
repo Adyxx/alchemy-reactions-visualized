@@ -27,6 +27,7 @@ def elements_graph(request):
     ]
 
     edges = []
+    recipes_payload = []
 
     recipes = (
         Recipe.objects
@@ -36,17 +37,29 @@ def elements_graph(request):
 
     for recipe in recipes:
         result_id = str(recipe.result_id)
+        component_ids = []
 
         for component in recipe.components.all():
+            component_id = str(component.element_id)
+            component_ids.append(component_id)
             edges.append(
                 {
                     "id": f"{component.element_id}-{recipe.id}-{recipe.result_id}",
-                    "source": str(component.element_id),
+                    "source": component_id,
                     "target": result_id,
+                    "recipeId": str(recipe.id),
                 }
             )
 
-    return JsonResponse({"nodes": nodes, "edges": edges})
+        recipes_payload.append(
+            {
+                "id": str(recipe.id),
+                "resultId": result_id,
+                "components": component_ids,
+            }
+        )
+
+    return JsonResponse({"nodes": nodes, "edges": edges, "recipes": recipes_payload})
 
 
 urlpatterns = [
