@@ -11,6 +11,7 @@ npm run dev
 ```
 
 `npm run build` also exports the current graph data from `backend/db.sqlite3` into `public/elements.json`, so the site can be deployed statically on GitHub Pages without a live Django server.
+For GitHub Pages deployment, `backend/db.sqlite3` should be committed with the latest data before running the build workflow.
 
 ## Start the backend
 
