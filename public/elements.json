@@ -1,0 +1,628 @@
+{
+  "nodes": [
+    {
+      "id": "55",
+      "name": "Bad Candy",
+      "symbol": "BC",
+      "description": "Enemies seek it.",
+      "cost": 2,
+      "aspect": "bloom"
+    },
+    {
+      "id": "40",
+      "name": "Blood",
+      "symbol": "Bl",
+      "description": "",
+      "cost": 1,
+      "aspect": "neutral"
+    },
+    {
+      "id": "39",
+      "name": "Bone",
+      "symbol": "Bo",
+      "description": "",
+      "cost": 1,
+      "aspect": "neutral"
+    },
+    {
+      "id": "43",
+      "name": "Burn",
+      "symbol": "Bu",
+      "description": "",
+      "cost": 2,
+      "aspect": "spark"
+    },
+    {
+      "id": "49",
+      "name": "Caramelized",
+      "symbol": "Ca",
+      "description": "",
+      "cost": 2,
+      "aspect": "bloom"
+    },
+    {
+      "id": "30",
+      "name": "Charge",
+      "symbol": "Ch",
+      "description": "",
+      "cost": 1,
+      "aspect": "spark"
+    },
+    {
+      "id": "32",
+      "name": "Cold",
+      "symbol": "C",
+      "description": "",
+      "cost": 1,
+      "aspect": "snow"
+    },
+    {
+      "id": "37",
+      "name": "Essence",
+      "symbol": "Es",
+      "description": "",
+      "cost": 1,
+      "aspect": "moon"
+    },
+    {
+      "id": "45",
+      "name": "Explosion",
+      "symbol": "Ex",
+      "description": "",
+      "cost": 2,
+      "aspect": "spark"
+    },
+    {
+      "id": "47",
+      "name": "Feedback",
+      "symbol": "Fe",
+      "description": "",
+      "cost": 2,
+      "aspect": "moon"
+    },
+    {
+      "id": "35",
+      "name": "Floral",
+      "symbol": "Fl",
+      "description": "",
+      "cost": 1,
+      "aspect": "bloom"
+    },
+    {
+      "id": "56",
+      "name": "Fragrant",
+      "symbol": "Fra",
+      "description": "",
+      "cost": 1,
+      "aspect": "bloom"
+    },
+    {
+      "id": "44",
+      "name": "Freeze",
+      "symbol": "Fr",
+      "description": "",
+      "cost": 2,
+      "aspect": "snow"
+    },
+    {
+      "id": "36",
+      "name": "Fungal",
+      "symbol": "Fu",
+      "description": "",
+      "cost": 1,
+      "aspect": "bloom"
+    },
+    {
+      "id": "29",
+      "name": "Heat",
+      "symbol": "H",
+      "description": "",
+      "cost": 1,
+      "aspect": "spark"
+    },
+    {
+      "id": "34",
+      "name": "Herbal",
+      "symbol": "He",
+      "description": "",
+      "cost": 1,
+      "aspect": "bloom"
+    },
+    {
+      "id": "33",
+      "name": "Mineral",
+      "symbol": "Mi",
+      "description": "",
+      "cost": 1,
+      "aspect": "crystal"
+    },
+    {
+      "id": "58",
+      "name": "Mist",
+      "symbol": "Mis",
+      "description": "",
+      "cost": 2,
+      "aspect": "snow"
+    },
+    {
+      "id": "51",
+      "name": "Mud",
+      "symbol": "Mu",
+      "description": "",
+      "cost": 1,
+      "aspect": "crystal"
+    },
+    {
+      "id": "54",
+      "name": "Poison",
+      "symbol": "Poi",
+      "description": "",
+      "cost": 2,
+      "aspect": "bloom"
+    },
+    {
+      "id": "50",
+      "name": "Poultice",
+      "symbol": "Po",
+      "description": "",
+      "cost": 2,
+      "aspect": "bloom"
+    },
+    {
+      "id": "57",
+      "name": "Protection",
+      "symbol": "Pr",
+      "description": "",
+      "cost": 2,
+      "aspect": "crystal"
+    },
+    {
+      "id": "42",
+      "name": "Restore",
+      "symbol": "Re",
+      "description": "",
+      "cost": 2,
+      "aspect": "bloom"
+    },
+    {
+      "id": "48",
+      "name": "Smoke",
+      "symbol": "Sm",
+      "description": "",
+      "cost": 1,
+      "aspect": "spark"
+    },
+    {
+      "id": "46",
+      "name": "Spirit",
+      "symbol": "Sp",
+      "description": "",
+      "cost": 1,
+      "aspect": "moon"
+    },
+    {
+      "id": "41",
+      "name": "Sticky",
+      "symbol": "St",
+      "description": "",
+      "cost": 1,
+      "aspect": "neutral"
+    },
+    {
+      "id": "38",
+      "name": "Sweet",
+      "symbol": "Sw",
+      "description": "",
+      "cost": 1,
+      "aspect": "neutral"
+    },
+    {
+      "id": "52",
+      "name": "Tar",
+      "symbol": "Ta",
+      "description": "",
+      "cost": 2,
+      "aspect": "spark"
+    },
+    {
+      "id": "31",
+      "name": "Wet",
+      "symbol": "W",
+      "description": "",
+      "cost": 1,
+      "aspect": "snow"
+    },
+    {
+      "id": "53",
+      "name": "Yeast",
+      "symbol": "Ye",
+      "description": "",
+      "cost": 1,
+      "aspect": "bloom"
+    }
+  ],
+  "edges": [
+    {
+      "id": "38-24-55",
+      "source": "38",
+      "target": "55",
+      "recipeId": "24"
+    },
+    {
+      "id": "54-24-55",
+      "source": "54",
+      "target": "55",
+      "recipeId": "24"
+    },
+    {
+      "id": "29-13-43",
+      "source": "29",
+      "target": "43",
+      "recipeId": "13"
+    },
+    {
+      "id": "30-13-43",
+      "source": "30",
+      "target": "43",
+      "recipeId": "13"
+    },
+    {
+      "id": "29-25-49",
+      "source": "29",
+      "target": "49",
+      "recipeId": "25"
+    },
+    {
+      "id": "38-25-49",
+      "source": "38",
+      "target": "49",
+      "recipeId": "25"
+    },
+    {
+      "id": "33-14-45",
+      "source": "33",
+      "target": "45",
+      "recipeId": "14"
+    },
+    {
+      "id": "43-14-45",
+      "source": "43",
+      "target": "45",
+      "recipeId": "14"
+    },
+    {
+      "id": "42-17-47",
+      "source": "42",
+      "target": "47",
+      "recipeId": "17"
+    },
+    {
+      "id": "46-17-47",
+      "source": "46",
+      "target": "47",
+      "recipeId": "17"
+    },
+    {
+      "id": "29-26-56",
+      "source": "29",
+      "target": "56",
+      "recipeId": "26"
+    },
+    {
+      "id": "35-26-56",
+      "source": "35",
+      "target": "56",
+      "recipeId": "26"
+    },
+    {
+      "id": "31-15-44",
+      "source": "31",
+      "target": "44",
+      "recipeId": "15"
+    },
+    {
+      "id": "32-15-44",
+      "source": "32",
+      "target": "44",
+      "recipeId": "15"
+    },
+    {
+      "id": "32-28-58",
+      "source": "32",
+      "target": "58",
+      "recipeId": "28"
+    },
+    {
+      "id": "48-28-58",
+      "source": "48",
+      "target": "58",
+      "recipeId": "28"
+    },
+    {
+      "id": "31-19-51",
+      "source": "31",
+      "target": "51",
+      "recipeId": "19"
+    },
+    {
+      "id": "41-19-51",
+      "source": "41",
+      "target": "51",
+      "recipeId": "19"
+    },
+    {
+      "id": "34-18-50",
+      "source": "34",
+      "target": "50",
+      "recipeId": "18"
+    },
+    {
+      "id": "41-18-50",
+      "source": "41",
+      "target": "50",
+      "recipeId": "18"
+    },
+    {
+      "id": "33-27-57",
+      "source": "33",
+      "target": "57",
+      "recipeId": "27"
+    },
+    {
+      "id": "42-27-57",
+      "source": "42",
+      "target": "57",
+      "recipeId": "27"
+    },
+    {
+      "id": "31-10-42",
+      "source": "31",
+      "target": "42",
+      "recipeId": "10"
+    },
+    {
+      "id": "36-10-42",
+      "source": "36",
+      "target": "42",
+      "recipeId": "10"
+    },
+    {
+      "id": "31-11-42",
+      "source": "31",
+      "target": "42",
+      "recipeId": "11"
+    },
+    {
+      "id": "35-11-42",
+      "source": "35",
+      "target": "42",
+      "recipeId": "11"
+    },
+    {
+      "id": "31-12-42",
+      "source": "31",
+      "target": "42",
+      "recipeId": "12"
+    },
+    {
+      "id": "34-12-42",
+      "source": "34",
+      "target": "42",
+      "recipeId": "12"
+    },
+    {
+      "id": "34-21-42",
+      "source": "34",
+      "target": "42",
+      "recipeId": "21"
+    },
+    {
+      "id": "38-21-42",
+      "source": "38",
+      "target": "42",
+      "recipeId": "21"
+    },
+    {
+      "id": "29-23-48",
+      "source": "29",
+      "target": "48",
+      "recipeId": "23"
+    },
+    {
+      "id": "31-23-48",
+      "source": "31",
+      "target": "48",
+      "recipeId": "23"
+    },
+    {
+      "id": "37-16-46",
+      "source": "37",
+      "target": "46",
+      "recipeId": "16"
+    },
+    {
+      "id": "39-16-46",
+      "source": "39",
+      "target": "46",
+      "recipeId": "16"
+    },
+    {
+      "id": "41-20-52",
+      "source": "41",
+      "target": "52",
+      "recipeId": "20"
+    },
+    {
+      "id": "43-20-52",
+      "source": "43",
+      "target": "52",
+      "recipeId": "20"
+    },
+    {
+      "id": "36-22-53",
+      "source": "36",
+      "target": "53",
+      "recipeId": "22"
+    },
+    {
+      "id": "38-22-53",
+      "source": "38",
+      "target": "53",
+      "recipeId": "22"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "24",
+      "resultId": "55",
+      "components": [
+        "38",
+        "54"
+      ]
+    },
+    {
+      "id": "13",
+      "resultId": "43",
+      "components": [
+        "29",
+        "30"
+      ]
+    },
+    {
+      "id": "25",
+      "resultId": "49",
+      "components": [
+        "29",
+        "38"
+      ]
+    },
+    {
+      "id": "14",
+      "resultId": "45",
+      "components": [
+        "33",
+        "43"
+      ]
+    },
+    {
+      "id": "17",
+      "resultId": "47",
+      "components": [
+        "42",
+        "46"
+      ]
+    },
+    {
+      "id": "26",
+      "resultId": "56",
+      "components": [
+        "29",
+        "35"
+      ]
+    },
+    {
+      "id": "15",
+      "resultId": "44",
+      "components": [
+        "31",
+        "32"
+      ]
+    },
+    {
+      "id": "28",
+      "resultId": "58",
+      "components": [
+        "32",
+        "48"
+      ]
+    },
+    {
+      "id": "19",
+      "resultId": "51",
+      "components": [
+        "31",
+        "41"
+      ]
+    },
+    {
+      "id": "18",
+      "resultId": "50",
+      "components": [
+        "34",
+        "41"
+      ]
+    },
+    {
+      "id": "27",
+      "resultId": "57",
+      "components": [
+        "33",
+        "42"
+      ]
+    },
+    {
+      "id": "10",
+      "resultId": "42",
+      "components": [
+        "31",
+        "36"
+      ]
+    },
+    {
+      "id": "11",
+      "resultId": "42",
+      "components": [
+        "31",
+        "35"
+      ]
+    },
+    {
+      "id": "12",
+      "resultId": "42",
+      "components": [
+        "31",
+        "34"
+      ]
+    },
+    {
+      "id": "21",
+      "resultId": "42",
+      "components": [
+        "34",
+        "38"
+      ]
+    },
+    {
+      "id": "23",
+      "resultId": "48",
+      "components": [
+        "29",
+        "31"
+      ]
+    },
+    {
+      "id": "16",
+      "resultId": "46",
+      "components": [
+        "37",
+        "39"
+      ]
+    },
+    {
+      "id": "20",
+      "resultId": "52",
+      "components": [
+        "41",
+        "43"
+      ]
+    },
+    {
+      "id": "22",
+      "resultId": "53",
+      "components": [
+        "36",
+        "38"
+      ]
+    }
+  ]
+}

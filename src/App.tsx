@@ -83,13 +83,16 @@ function App() {
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
 
   const selectedAspectSet = useMemo(() => new Set(selectedAspects), [selectedAspects]);
+  const graphDataUrl = import.meta.env.DEV
+    ? '/api/elements/'
+    : `${import.meta.env.BASE_URL}elements.json`;
 
   useEffect(() => {
     let isMounted = true;
 
     async function loadGraph() {
       try {
-        const response = await fetch('/api/elements/');
+        const response = await fetch(graphDataUrl);
         if (!response.ok) {
           throw new Error(`Failed to load elements: ${response.status}`);
         }
@@ -116,7 +119,7 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [graphDataUrl]);
 
   const visibleGraph = useMemo<VisibleGraph>(() => {
     if (!graph) {

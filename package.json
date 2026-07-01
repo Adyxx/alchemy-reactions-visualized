@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "python backend/manage.py export_elements_json --output public/elements.json && tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
