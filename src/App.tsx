@@ -21,7 +21,7 @@ type GraphNode = {
   symbol: string;
   description: string;
   cost: number;
-  aspect: 'spark' | 'snow' | 'crystal' | 'bloom' | 'moon';
+  aspect: 'spark' | 'snow' | 'crystal' | 'bloom' | 'moon' | 'neutral';
 };
 
 type GraphEdge = {
@@ -44,6 +44,7 @@ const aspectTheme: Record<
   crystal: { background: '#f5f3ff', border: '#a78bfa', text: '#4c1d95' },
   bloom: { background: '#f0fdf4', border: '#4ade80', text: '#166534' },
   moon: { background: '#f8fafc', border: '#94a3b8', text: '#0f172a' },
+  neutral: { background: '#808080', border: '#94a3b8', text: '#0f172a' },
 };
 
 function App() {

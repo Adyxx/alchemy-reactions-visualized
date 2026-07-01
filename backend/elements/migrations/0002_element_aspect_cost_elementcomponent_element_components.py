@@ -23,6 +23,7 @@ class Migration(migrations.Migration):
                     ("crystal", "CRYSTAL"),
                     ("bloom", "BLOOM"),
                     ("moon", "MOON"),
+                    ("neutral", "NEUTRAL"),
                 ],
                 default="spark",
                 max_length=24,

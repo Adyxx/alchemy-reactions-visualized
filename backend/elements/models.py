@@ -7,6 +7,7 @@ class Aspect(models.TextChoices):
     CRYSTAL = "crystal", "CRYSTAL"
     BLOOM = "bloom", "BLOOM"
     MOON = "moon", "MOON"
+    NEUTRAL = "neutral", "NEUTRAL"
 
 
 class Element(models.Model):
